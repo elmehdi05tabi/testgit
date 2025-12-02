@@ -1,40 +1,79 @@
+:root {
+    --primary-color: #007BFF; /* Bleu élégant pour l'accentuation */
+    --secondary-color: #6C757D; /* Gris pour les bordures et le texte secondaire */
+    --background-color: #f8f9fa; /* Arrière-plan très clair */
+    --header-bg: #e9ecef; /* Arrière-plan de l'en-tête */
+    --hover-bg: #e2f0ff; /* Bleu très clair pour le survol */
+}
+
 body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            padding: 20px;
-        }
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
 
-        table {
-            width: 60%;
-            margin: 0 auto;
-            border-collapse: collapse;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+/* --- Style du Tableau --- */
+table {
+    width: 80%; /* Occupe 80% de la largeur du conteneur */
+    border-collapse: collapse; /* Supprime l'espace entre les bordures */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombre douce pour un effet flottant */
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden; /* Important pour que les coins arrondis fonctionnent bien */
+}
 
-        caption {
-            caption-side: top;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
+caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 15px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-        }
+/* --- En-tête du Tableau --- */
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    padding: 15px 10px;
+    text-align: left;
+    border-bottom: 3px solid var(--secondary-color);
+}
 
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
+/* --- Cellules du Tableau --- */
+td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6; /* Ligne de séparation subtile */
+    color: #495057;
+}
 
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
+/* --- Style des Lignes (Pour un effet zébré) --- */
+tr:nth-child(even) {
+    background-color: #f0f8ff; /* Couleur très claire pour les lignes paires */
+}
 
-        tr:hover {
-            background-color: #ddd;
-        }
+/* --- Animation au Survol de la Ligne (Magnifique !) --- */
+tr {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-        td {
-            border-bottom: 1px solid #ddd;
-        }
+tr:hover {
+    background-color: var(--hover-bg); /* Surligne en bleu clair */
+    transform: scale(1.01); /* Animation: Agrandit très légèrement la ligne */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ajoute une petite ombre au survol */
+    cursor: pointer;
+}
+
+/* Style spécifique pour la colonne ID */
+td:first-child {
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-align: center;
+}
